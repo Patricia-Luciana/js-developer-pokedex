@@ -7,7 +7,13 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li
+        onCLick="
+            let audio = new Audio('${pokemon.cries}');
+            audio.play();
+        "
+
+        class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
